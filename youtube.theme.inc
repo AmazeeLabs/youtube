@@ -30,6 +30,7 @@ function theme_youtube_video($variables) {
   $player_class = variable_get('youtube_player_class', 'youtube-field-player');
   $wmode = variable_get('youtube_wmode', TRUE);
   $privacy = variable_get('youtube_privacy', FALSE);
+  $fullscreen = variable_get('youtube_fullscreen', FALSE);
   $dimensions = youtube_get_dimensions($size, $width, $height);
 
   // Protocol changes based on current page TODO.
@@ -59,6 +60,9 @@ function theme_youtube_video($variables) {
   }
   if ($autoplay) {
     $query['autoplay'] = '1';
+  }
+  if ($fullscreen) {
+    $query['fs'] = '0';
   }
   if ($showinfo) {
     $query['showinfo'] = '0';

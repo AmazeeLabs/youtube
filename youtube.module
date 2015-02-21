@@ -82,6 +82,12 @@ function youtube_settings_form($form) {
     '#default_value' => variable_get('youtube_wmode', TRUE),
     '#description' => t('Checking this will fix the issue of a YouTube video showing above elements with fixed or absolute positioning (including Drupal\'s Overlay and Toolbar).'),
   );
+  $form['youtube_global']['youtube_fullscreen'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Hide fullscreen button.'),
+    '#default_value' => variable_get('youtube_fullscreen', FALSE),
+    '#description' => t('Checking this will hide the button to show the video in fullscreen'),
+  );
   $form['youtube_privacy'] = array(
     '#type' => 'checkbox',
     '#title' => t('Enable privacy-enhanced mode.'),
